@@ -1,22 +1,28 @@
-<div align="center">
 🤖 Qwen Agent Society
 AI-Powered Multi-Agent Enterprise Operations Platform
-Built with FastAPI, LangGraph, Agentic AI, React, PostgreSQL, and Vector Databases.
-Python
-FastAPI
-LangGraph
-React
-License
-</div>
+Built with FastAPI, LangGraph, Agentic AI, Ollama, Qwen3, PostgreSQL, and Vector Databases.
 🚀 Overview
 Qwen Agent Society is an enterprise-grade multi-agent AI platform designed to automate business
 operations through intelligent agent collaboration.
-The platform uses a Supervisor Agent to coordinate specialized agents responsible for research,
-finance, compliance, memory management, validation, and workflow orchestration.
+The platform uses a Supervisor Agent to coordinate specialized agents responsible for:
+•
+•
+•
+•
+•
+•
+Research
+Finance
+Compliance
+Memory Management
+Validation
+Workflow Orchestration
 The architecture follows an Agentic AI pattern powered by LangGraph and FastAPI, enabling scalable
 enterprise decision-support systems.
 🎯 Problem Statement
-Modern enterprises face challenges in:
+Modern enterprises face challenges such as:
+•
+•
 •
 •
 •
@@ -25,13 +31,9 @@ Information overload
 Manual research processes
 Compliance verification
 Financial analysis
-1
-•
-•
 Knowledge management
 Workflow automation
-Qwen Agent Society addresses these challenges by orchestrating multiple AI agents that collaborate to
-solve complex business tasks.
+Qwen Agent Society addresses these challenges through a collaborative multi-agent framework.
 🏗️ System Architecture
 User
 │
@@ -39,6 +41,7 @@ User
 React Frontend
 │
 ▼
+1
 FastAPI Backend
 │
 ▼
@@ -54,8 +57,7 @@ Supervisor Agent
 LangGraph Workflow Engine
 │
 ▼
-LLM Provider
-(OpenAI / Groq / Qwen / Ollama)
+Qwen3 / Ollama
 │
 ▼
 Response Generation
@@ -73,7 +75,6 @@ Finance Agent
 Compliance Agent
 Validator Agent
 Memory Agent
-2
 Enterprise Workflow Automation
 •
 •
@@ -92,26 +93,18 @@ Knowledge Management
 •
 Long-term memory
 Vector search
-Retrieval-Augmented Generation (RAG)
-Semantic search
+Semantic retrieval
+RAG architecture
 API-Driven Architecture
 •
-•
-•
-•
 FastAPI backend
+2
+•
+•
+•
 REST APIs
 Swagger documentation
 Modular architecture
-Frontend
-•
-•
-•
-•
-React
-Vite
-TypeScript
-Tailwind CSS
 📂 Project Structure
 qwen-agent-society/
 │
@@ -129,14 +122,8 @@ qwen-agent-society/
 │ ├── tools/
 │ ├── main.py
 │ └── requirements.txt
-3
-│
 │
 ├── frontend/
-│ ├── src/
-│ ├── package.json
-│ ├── vite.config.ts
-│ └── tailwind.config.js
 ├── docs/
 ├── deployment/
 ├── demo/
@@ -150,8 +137,8 @@ Receives user requests
 Breaks tasks into subtasks
 •
 •
-Assigns work to specialized agents
-Consolidates responses
+Assigns work to agents
+Consolidates results
 Research Agent
 •
 •
@@ -159,13 +146,14 @@ Research Agent
 Information gathering
 Knowledge extraction
 Data summarization
+3
 Finance Agent
 •
 •
 •
 Financial analysis
 Risk assessment
-Business metrics evaluation
+Business metric evaluation
 Compliance Agent
 •
 •
@@ -178,14 +166,13 @@ Validator Agent
 •
 •
 Response verification
-Output quality assurance
+Quality assurance
 Hallucination reduction
-4
 Memory Agent
 •
 •
 •
-Long-term memory management
+Long-term memory
 Retrieval operations
 Context preservation
 ⚙️ Technology Stack
@@ -203,11 +190,7 @@ Pydantic
 AI Models
 •
 •
-•
-•
-OpenAI
-Groq
-Qwen
+Qwen3
 Ollama
 Databases
 •
@@ -223,6 +206,7 @@ React
 TypeScript
 Vite
 Tailwind CSS
+4
 Deployment
 •
 •
@@ -230,45 +214,38 @@ Deployment
 Docker
 Nginx
 Alibaba Cloud
-5
 🚀 Local Setup
 Clone Repository
 git clone https://github.com/MaarreeJ/qwen-agent-society.git
 cd qwen-agent-society
 Backend Setup
 cd backend
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-Create .env
-OPENAI_API_KEY=your_key_here
-Start FastAPI
+Run FastAPI
 uvicorn main:app --reload
-API Documentation
+Swagger
 http://127.0.0.1:8000/docs
-Frontend Setup
-cd frontend
-npm install
-npm run dev
-6
 📈 Roadmap
 Phase 1
+•
+•
+•
+Phase 2
 •
 •
 •
 FastAPI Backend
 API Endpoints
 Swagger Integration
-Phase 2
-•
-•
-•
-•
-Phase 3
-Multi-Agent Framework
 Supervisor Agent
 Research Agent
 Finance Agent
+5
+•
+Compliance Agent
+Phase 3
 •
 •
 •
@@ -284,16 +261,15 @@ PostgreSQL
 Qdrant
 Phase 5
 •
-•
 React Dashboard
-Enterprise UI
 Phase 6
 •
 •
 Docker Deployment
-Cloud Hosting
+Alibaba Cloud Deployment
 🧪 Current Status
 Completed
+•
 •
 •
 •
@@ -305,8 +281,8 @@ FastAPI Backend
 Swagger Documentation
 GitHub Integration
 Supervisor Agent
-OpenAI Service Layer
-7
+Ollama Integration
+Qwen3 Integration
 In Progress
 •
 •
@@ -323,7 +299,10 @@ Human-in-the-Loop Approval
 Enterprise Dashboard
 👨‍💻 Author
 Marree Jachaak
+6
 AI Engineer | Risk Management Professional | Agentic AI Builder
 GitHub: https://github.com/MaarreeJ
 📜 License
 MIT License
+7
+
