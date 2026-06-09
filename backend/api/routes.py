@@ -1,23 +1,18 @@
 from fastapi import APIRouter
-from agents.supervisor import supervisor_agent
+from agents.execution import run_workflow
 
 router = APIRouter()
 
 
+@router.get("/agent")
+def agent(query: str):
+
+    return run_workflow(query)
+
+
 @router.get("/health")
-def health_check():
+def health():
 
     return {
         "status": "healthy"
-    }
-
-
-@router.get("/agent")
-def run_agent(query: str):
-
-    result = supervisor_agent(query)
-
-    return {
-        "query": query,
-        "response": result
     }
