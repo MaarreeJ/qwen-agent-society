@@ -1,134 +1,127 @@
-# 🤖 Qwen Agent Society
+# Enterprise RAG Architecture
 
-## AI-Powered Multi-Agent Enterprise Operations Platform
+## Overview
 
-Built with FastAPI, LangGraph, Agentic AI, Ollama, Qwen3, PostgreSQL, and Vector Databases.
+Enterprise-grade Multi-Agent RAG system built using:
 
----
+* React + Vite Frontend
+* FastAPI Backend
+* LangGraph Multi-Agent Workflow
+* Qdrant Vector Database
+* Sentence Transformers Embeddings
+* PDF Upload and Processing
+* Retrieval Augmented Generation (RAG)
 
-## 🚀 Overview
+## Architecture
 
-Qwen Agent Society is an enterprise-grade multi-agent AI platform designed to automate business operations through intelligent agent collaboration.
+```mermaid
+flowchart TD
 
-### Core Agents
+A[React Frontend] --> B[FastAPI Backend]
 
-* Supervisor Agent
+B --> C[PDF Upload]
+C --> D[Text Extraction]
+D --> E[Semantic Chunking]
+E --> F[Embeddings]
+F --> G[Qdrant Vector DB]
+
+G --> H[Retriever]
+
+H --> I[LangGraph Supervisor]
+
+I --> J[Research Agent]
+I --> K[Finance Agent]
+I --> L[Compliance Agent]
+
+J --> M[Validator]
+K --> M
+L --> M
+
+M --> N[Final Response]
+
+N --> A
+```
+
+## Features
+
+* PDF Upload
+* PDF Text Extraction
+* Semantic Chunking
+* Embedding Generation
+* Vector Storage using Qdrant
+* Retrieval-Augmented Generation
+* LangGraph Agent Workflow
 * Research Agent
 * Finance Agent
 * Compliance Agent
-* Memory Agent
 * Validator Agent
 
----
-
-## 🏗️ Architecture
-
-```text
-User
- │
- ▼
-React Frontend
- │
- ▼
-FastAPI Backend
- │
- ▼
-Supervisor Agent
- │
- ├── Research Agent
- ├── Finance Agent
- ├── Compliance Agent
- ├── Memory Agent
- └── Validator Agent
- │
- ▼
-LangGraph Workflow
- │
- ▼
-Qwen3 via Ollama
- │
- ▼
-Response
-```
-
----
-
-## 🛠 Technology Stack
-
-### Backend
-
-* Python
-* FastAPI
-* LangGraph
-* LangChain
-
-### AI Models
-
-* Qwen3
-* Ollama
-
-### Database
-
-* PostgreSQL
-* Qdrant
+## Tech Stack
 
 ### Frontend
 
 * React
 * TypeScript
-* Tailwind CSS
+* Vite
 
----
+### Backend
 
-## 🚀 Run Locally
+* FastAPI
+* LangGraph
+* Sentence Transformers
+* Qdrant
+* PyPDF
 
-```bash
-git clone https://github.com/MaarreeJ/qwen-agent-society.git
+## Workflow
 
-cd qwen-agent-society/backend
+1. Upload PDF
+2. Extract Text
+3. Chunk Text
+4. Generate Embeddings
+5. Store in Qdrant
+6. Retrieve Relevant Chunks
+7. Pass Context to Research Agent
+8. Run Finance Agent
+9. Run Compliance Agent
+10. Validate Results
+11. Return Final Analysis
 
-python3 -m venv .venv
+## Example Query
 
-source .venv/bin/activate
+"What are Tesla's major business risks?"
 
-pip install -r requirements.txt
+## Future Enhancements
 
-uvicorn main:app --reload
-```
+* Cross Encoder Re-ranking
+* Hybrid Search (BM25 + Vector)
+* Multi-PDF Support
+* Agent Memory Expansion
+* Deployment on AWS / Azure
 
----
 
-## 📚 API Documentation
 
-```text
-http://127.0.0.1:8000/docs
-```
 
----
+ Architecture
 
-## 📈 Roadmap
+![Architecture](docs/architecture.png)
 
-* [x] FastAPI Backend
-* [x] Supervisor Agent
-* [x] Ollama Integration
-* [x] Qwen3 Integration
-* [ ] LangGraph Workflow
-* [ ] Memory Layer
-* [ ] RAG Integration
-* [ ] Alibaba Cloud Deployment
+# Workflow
 
----
+![Workflow](docs/workflow.png)
 
-## 👨‍💻 Author
+# Screenshots
 
-**Marree Jachaak**
+## PDF Upload
 
-AI Engineer | Risk Management Professional | Agentic AI Builder
+![PDF Upload](docs/screenshots/pdf-upload.png)
 
-GitHub: https://github.com/MaarreeJ
+## Tesla Analysis
 
----
+![Tesla Analysis](docs/screenshots/tesla-analysis.png)
 
-## 📜 License
+## Swagger UI
 
-MIT License
+![Swagger](docs/screenshots/swagger-ui.png)
+
+## Author
+Marree Jachaak
