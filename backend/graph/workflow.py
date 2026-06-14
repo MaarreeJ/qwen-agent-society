@@ -12,12 +12,12 @@ from agents.validator import validator_agent
 
 class AgentState(TypedDict):
     query: str
+    context: str
     research: str
     finance: dict
     compliance: dict
     validation: dict
-
-
+    
 # ----------------------
 # Nodes
 # ----------------------
@@ -26,8 +26,16 @@ def research_node(state):
 
     print("Research Node")
 
+    research_input = f"""
+Context:
+{state['context']}
+
+Question:
+{state['query']}
+"""
+
     state["research"] = research_agent(
-        state["query"]
+        research_input
     )
 
     save_memory(
@@ -122,10 +130,14 @@ builder.add_edge(
 graph = builder.compile()
 
 
-def run_graph(query):
+def run_graph(
+    query,
+    context=""
+):
 
     state = {
         "query": query,
+        "context": context,
         "research": "",
         "finance": {},
         "compliance": {},
@@ -133,3 +145,4 @@ def run_graph(query):
     }
 
     return graph.invoke(state)
+
