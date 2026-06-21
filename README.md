@@ -187,19 +187,6 @@ Example analyses:
 
 ---
 
-# 📸 Screenshots
-
-## PDF Upload
-
-![PDF Upload](docs/screenshots/pdf-upload.png)
-
-## Tesla Risk Analysis
-
-![Tesla Analysis](docs/screenshots/tesla-analysis.png)
-
-## Swagger UI
-
-![Swagger UI](docs/screenshots/swagger-ui.png)
 
 ---
 
